@@ -7,14 +7,14 @@ const albumRequests = new AlbumRequests()
 const AlbumList = () => {
 
     const [loading, setLoading] = useState(true)
-    const [albumsList, setalbumsList] = useState(Array<Album>)
+    const [albumsList, setAlbumsList] = useState(Array<Album>)
   
     const getAlbumList = async() => {
 
         try {
             const getAlbumList = await albumRequests.getAlbumList();
             console.log(getAlbumList.data);
-            setalbumsList(getAlbumList.data);
+            setAlbumsList(getAlbumList.data);
             setLoading(false);
         }
         catch (error) {
@@ -36,23 +36,32 @@ const AlbumList = () => {
 
         <h1>Album Photo 🖼️</h1>
 
-        <div className="container">
+        {
+            loading ?
 
-            <div className="row">
+            <h2>Chargement...</h2>
 
-                {albumsList?.map((row) => (
-
-                    <a href="#" key={row.id} className="col-12 col-md-3 album">
-                            
-                        <span>{row.title}</span>
-                            
-                    </a>
-  
-                ))}
-
+            :
+            
+            <div className="container">
+        
+                    <div className="row">
+        
+                        {albumsList?.map((row) => (
+        
+                            <a href={'/details/' + row.id} key={row.id} className="col-12 col-md-3 album">
+                                    
+                                <span>{row.title}</span>
+                                    
+                            </a>
+        
+                        ))}
+        
+                    </div>
+        
             </div>
 
-        </div>
+        }
         
         </>
     

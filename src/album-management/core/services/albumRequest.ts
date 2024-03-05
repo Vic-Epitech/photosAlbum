@@ -8,10 +8,10 @@ const ALBUM_URL = `${API_URL}/albums/`;
 export class AlbumRequests {
     
     getAlbumList() {
-        return axios.get<Album>(ALBUM_URL);
+        return axios.get<Array<Album>>(ALBUM_URL);
     }
     
-    getAlbumById(albumId:number) {
+    getAlbumById(albumId:string) {
         return axios.get<Album>(ALBUM_URL + `/${albumId}`);
     }
 

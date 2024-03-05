@@ -1,6 +1,7 @@
 import './App.css'
 import { Route, Routes} from 'react-router-dom'
-import { AlbumPages } from './album-management/albumPages'
+import { AlbumDetails } from './album-management/pages/album-details'
+import { AlbumList } from './album-management/pages/album-list'
 
 function App() {
 
@@ -9,8 +10,9 @@ function App() {
     <div className='container'>
 
       <Routes>
-        <Route index element={<AlbumPages/>} />
-        <Route path="/" element={<AlbumPages/>} />
+        <Route path='list' element={<AlbumList />} />
+        <Route path='details/:albumId' element={<AlbumDetails />} />
+        <Route path="/" element={<AlbumList/>} />
       </Routes>
 
     </div>
