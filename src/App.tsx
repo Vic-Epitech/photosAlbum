@@ -5,10 +5,15 @@ import { AlbumPages } from './album-management/albumPages'
 function App() {
 
   return (
-    <Routes>
-      <Route index element={<AlbumPages/>} />
-      <Route path="/" element={<AlbumPages/>} />
-    </Routes>
+
+    <div className='container'>
+
+      <Routes>
+        <Route index element={<AlbumPages/>} />
+        <Route path="/" element={<AlbumPages/>} />
+      </Routes>
+
+    </div>
   )
 }
 

@@ -12,7 +12,7 @@ const AlbumPages = () => (
         <Route index element={<AlbumList />} />
   
     </Routes>
-    
-  )
-  
-  export {AlbumPages}
+
+)
+
+export {AlbumPages}
