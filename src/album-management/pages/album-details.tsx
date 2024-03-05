@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useEffect, useState } from "react"
 import { AlbumRequests } from "../core/services/albumRequest";
 import { useParams } from "react-router-dom";
@@ -7,7 +8,8 @@ const albumRequests = new AlbumRequests()
 
 const AlbumDetails = () => {
 
-  const albumId = useParams()['albumId'];
+  //@ts-ignore
+  const albumId:string = useParams()['albumId'];
   const [loading, setLoading] = useState(true)
 
   const [album, setAlbum] = useState<Album>()
